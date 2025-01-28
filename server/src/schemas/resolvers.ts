@@ -46,7 +46,7 @@ const resolvers = {
             );
             return updatedUser;
         },
-        deleteBook: async (_parent: any, { book }: { book: IBook }, contextValue: any ): Promise<IUser | null> => {
+        deleteBook: async (_parent: any, { bookId }: { bookId: String }, contextValue: any ): Promise<IUser | null> => {
             const user = contextValue.user;
 
             if (!user) {
@@ -55,7 +55,7 @@ const resolvers = {
 
             const updatedUser = await User.findOneAndUpdate(
                 { _id: user._id },
-                { $pull: { savedBooks: { book } } },
+                { $pull: { savedBooks: { bookId } } },
                 { new: true, runValidators: true }
             );
             return updatedUser;
