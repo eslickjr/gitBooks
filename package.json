@@ -10,14 +10,11 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "concurrently \"cd server && npm run build\" \"cd client && npm run build\"",
     "builder": "cd client && npm run build",
-    "render-build":"npm install && npm run builder"
+    "render-build":"npm install && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "concurrently": "^8.2.0"
-  },
   "devDependencies": {
     "concurrently": "^8.2.0"
   }
